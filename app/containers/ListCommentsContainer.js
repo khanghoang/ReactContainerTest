@@ -6,13 +6,16 @@ class ListCommentsContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            comments: []
+            comments: [],
+            isLoading: true
         }
     }
 
     componentDidMount() {
+        // in the real world, this will be async call to
+        // some APIs and get response.
         setTimeout(() => {
-            this.setState({
+            this.setState(Object.assign({}, {
                 comments: [
                     "this is first comment",
                     "this is second comment",
@@ -20,12 +23,14 @@ class ListCommentsContainer extends Component {
                     "this is fourth comment",
                     "this is fifth comment",
                 ]
-            });
+            }, {isLoading: false}));
         }, 1000);
     }
 
     render() {
         return (
+            this.state.isLoading ?
+            <div>Loading...</div> :
             <ListCommentsComponent
                 comments={this.state.comments}
             />

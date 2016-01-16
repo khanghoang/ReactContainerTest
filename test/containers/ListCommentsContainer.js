@@ -7,11 +7,10 @@ import {
 } from 'enzyme';
 
 
-describe('<ListCommentsContainer />', function() {
-    it('render enought list items', function(done) {
-        this.timeout(5000);
+describe('<ListCommentsContainer />', () => {
+    it('render enought list items', (done) => {
         let listCommentsContainer = mount(<ListCommentsContainer />);
-        waitFor(function() {
+        waitFor(() => {
             return listCommentsContainer.find('li').length === 5;
         }, done);
     });
