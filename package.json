@@ -1,0 +1,45 @@
+{
+  "name": "react-container-test",
+  "version": "1.0.0",
+  "description": "An example how to test react container",
+  "main": "app.js",
+  "scripts": {
+    "start": "webpack-dev-server --hot --inline --display-error-details",
+    "test": "mocha --compilers js:babel-register --require test/utils/env.js test/**/* -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/khanghoang/ReactContainerTest.git"
+  },
+  "keywords": [
+    "react",
+    "container",
+    "test"
+  ],
+  "author": "hoangtrieukhang@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/khanghoang/ReactContainerTest/issues"
+  },
+  "homepage": "https://github.com/khanghoang/ReactContainerTest#readme",
+  "dependencies": {
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6"
+  },
+  "devDependencies": {
+    "babel": "^6.3.26",
+    "babel-core": "^6.4.0",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "chai": "^3.4.1",
+    "enzyme": "^1.3.1",
+    "file-loader": "^0.8.5",
+    "jsdom": "^7.2.2",
+    "mocha": "^2.3.4",
+    "react-addons-test-utils": "^0.14.6",
+    "react-hot-loader": "^1.3.0",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
