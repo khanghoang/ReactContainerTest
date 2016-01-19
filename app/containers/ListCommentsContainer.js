@@ -9,6 +9,7 @@ class ListCommentsContainer extends Component {
             comments: [],
             isLoading: true
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -27,13 +28,24 @@ class ListCommentsContainer extends Component {
         }, 1000);
     }
 
+    handleSubmit(e) {
+        e.preventDefault();
+        console.log(`username ${this.refs.username.value} password ${this.refs.password.value}`);
+    }
+
     render() {
         return (
             this.state.isLoading ?
-            <div>Loading...</div> :
-            <ListCommentsComponent
-                comments={this.state.comments}
-            />
+            <div className='loading'>Loading...</div> :
+            <div>
+                <ListCommentsComponent
+                    comments={this.state.comments}
+                    />
+                <form onSubmit={this.props.handleSubmit || this.handleSubmit}>
+                    <input ref='username' name='username' type='text'></input>
+                    <input ref='password' name='password' type='text'></input>
+                </form>
+            </div>
         )
     }
 }
